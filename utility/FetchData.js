@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text } from 'react-native';
+import React, { useEffect, useState, StyleSheet } from 'react';
+import { View, Text, Image } from 'react-native';
 import axios from 'axios';
 
 const FetchData = () => {
@@ -19,7 +19,6 @@ const FetchData = () => {
         });
         // Update component state with fetched articles
         setArticles(response.data.results);
-        console.log(response.data.results)
         setError(null);
       } catch (error) {
         console.error(error);
@@ -33,26 +32,22 @@ const FetchData = () => {
     <View>
       <Text>News Articles:</Text>
       {error ? (
-        <Text style={{color: 'red'}}>{error}</Text>
+        <Text style={{ color: 'red' }}>{error}</Text>
       ) : articles && articles.length > 0 ? (
         articles.map(article => (
           <View key={article.url}>
-            <Text style={{color: 'red'}}>
+            <Image style={{ resizeMode: 'contain' }} source={require('../assets/header-logo.png')} />
+            <Text style={{ color: 'red' }}>
               Title: {article.title}
-            </Text>
-            {/* <Text style={{color: 'red'}}>
-              URL: {article.link ? article.link : 'N/A'}
-            </Text> */}
-            <Text style={{color: 'red'}}>
-              Image: {article.image_url ? article.image_url : 'N/A'}
             </Text>
           </View>
         ))
       ) : (
-        <Text style={{color: 'red'}}>No articles found</Text>
+        <Text style={{ color: 'red' }}>No articles found</Text>
       )}
     </View>
   );
 };
+
 
 export default FetchData;
