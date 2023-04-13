@@ -18,12 +18,9 @@ const NewsFeed = () => {
       {/* Render the news data in the JSX */}
       {newsData.map((item) => (
         <View key={item.url}>
-          <Text>Title: {item.title}</Text>
-          <Text>Author: {item.author}</Text>
-          <Text>Published at: {item.published_at}</Text>
-          <Text>Description: {item.description}</Text>
+          {/* <Text>Title: {item.title}</Text>
           <Text>URL: {item.url}</Text>
-          <Text>Image: {item.image}</Text>
+          <Text>Image: {item.image}</Text> */}
         </View>
       ))}
     </View>
