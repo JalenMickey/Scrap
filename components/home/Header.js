@@ -11,14 +11,16 @@ const Header = () => {
       </TouchableOpacity>
 
       <View style={styles.iconsContainer}>
-        <TouchableOpacity>
-            <Image
-            source={{
-                uri:'https://icons8.com/icon/38977/chat-bubble'
-                }}
-                style={styles.icon}
-            />
-        </TouchableOpacity>
+      <TouchableOpacity>
+        <Image style={styles.icon}
+        source={require('../../assets/notify-logo.png')}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Image style={styles.icon}
+        source={require('../../assets/message-logo.png')}
+        />
+      </TouchableOpacity>
       </View>
     </View>
   )
@@ -29,24 +31,28 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         flexDirection: 'row',
-        marginHorizontal: 0,
-        marginVertical: -10
+        marginHorizontal: -10,
+        marginVertical: 0
     },
     iconsContainer: {
-        flexDirection: 'row' 
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginHorizontal: 10
+
     },
 
     logo: {
-        width: 80,
-        height: 40,
+        width: 50,
+        height: 50,
         resizeMode: 'contain'
         
 
     },
     icon: {
-        width: 30,
-        height: 30,
-        resizeMode: 'contain',
+        width: 40,
+        height: 40,
+        resizeMode: 'center',
     }
 })
 
