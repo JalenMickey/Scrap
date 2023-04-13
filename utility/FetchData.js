@@ -9,11 +9,11 @@ const FetchData = () => {
     const fetchData = async () => {
       try {
         // Fetch news articles from NewsData.io API
-        const response = await axios.get('https://newsdata.io/api/1', {
+        const response = await axios.get('https://newsdata.io/api/1/news', {
           params: {
-            apiKey: 'pub_2037841278dc570a5f6487d72b784a1e73044', // Replace with your actual API key from NewsData.io
-            language: 'en', // Set desired language for news articles
+            apikey: 'pub_2037841278dc570a5f6487d72b784a1e73044', // Replace with your actual API key from NewsData.io
             q: 'technology', // Set desired search query for news articles
+            language: 'en', // Set desired language for news articles
           },
         });
         // Update component state with fetched articles
@@ -28,16 +28,20 @@ const FetchData = () => {
   return (
     <View>
       <Text>News Articles:</Text>
-      {articles.map(article => (
-        <View key={article.url}>
-          <Text>Title: {article.title}</Text>
-          <Text>Author: {article.author}</Text>
-          <Text>Published at: {article.published_at}</Text>
-          <Text>Description: {article.description}</Text>
-          <Text>URL: {article.url}</Text>
-          <Text>Image: {article.image}</Text>
-        </View>
-      ))}
+      {articles && articles.length > 0 ? (
+        articles.map(article => (
+          <View key={article.url}>
+            <Text style={{color:"red"}}>Title: {article.title}</Text>
+            <Text style={{color:"red"}}>Author: {article.author}</Text>
+            <Text style={{color:"red"}}>Published at: {article.publishedAt}</Text>
+            <Text style={{color:"red"}}>Description: {article.description}</Text>
+            <Text style={{color:"red"}}>URL: {article.url}</Text>
+            <Text style={{color:"red"}}>Image: {article.image}</Text>
+          </View>
+        ))
+      ) : (
+        <Text style={{color:"red"}}>No articles found</Text>
+      )}
     </View>
   );
 };
