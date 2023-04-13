@@ -38,11 +38,11 @@ const FetchData = () => {
         articles.map(article => (
           <View key={article.url}>
             <Text style={{color: 'red'}}>
-              Title: {article.title ? article.title : 'N/A'}
+              Title: {article.title}
             </Text>
-            <Text style={{color: 'red'}}>
-              URL: {article.url ? article.url : 'N/A'}
-            </Text>
+            {/* <Text style={{color: 'red'}}>
+              URL: {article.link ? article.link : 'N/A'}
+            </Text> */}
             <Text style={{color: 'red'}}>
               Image: {article.image_url ? article.image_url : 'N/A'}
             </Text>
