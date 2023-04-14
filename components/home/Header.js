@@ -32,7 +32,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         marginHorizontal: -10,
-        marginVertical: 0
+        marginVertical: 0,
+        borderWidth: '2px',
+        borderColor: 'gold'
     },
     iconsContainer: {
         flexDirection: 'row',
