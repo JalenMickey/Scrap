@@ -1,5 +1,5 @@
 # My Universal React Project
-Scrap is a React Native social media platform dedicated for the MMA community. This will feature a news feed, personal messaging, liking, commenting and unlockable content(emojis, avatars, etc.). I have so far implemented the news feed using the NewsData API, and am working on designing the home page. Planning on a beta release!
+Scrap is a React Native social media platform dedicated for the MMA community. This will feature a news feed, personal messaging, liking, commenting and unlockable content(emojis, avatars, etc.). I have so far implemented the news feed using the NewsData API, and am working on designing the home page. Planning on a beta release in December 2023!
 
 <p>
   <!-- iOS -->
